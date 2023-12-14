@@ -28,7 +28,17 @@ public class Lotto {
         }
     }
 
-    void printlotto() {
+    void printLotto() {
         System.out.println(numbers);
+    }
+
+    int matchedNumbers(List<Integer> winningNumbers) {
+        return (int) numbers.stream()
+                .filter(winningNumbers::contains)
+                .count();
+    }
+
+    boolean isContainBonusNumber(int bonusNumber) {
+        return numbers.contains(bonusNumber);
     }
 }
