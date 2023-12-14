@@ -64,4 +64,17 @@ public class Validator {
             throw new IllegalArgumentException("[ERROR] 로또 번호는 중복될 수 없습니다.");
         }
     }
+
+    void checkDuplicate(String input, List<Integer> winningNumbers) {
+        int bonusNumber = Integer.parseInt(input);
+        if (winningNumbers.contains(bonusNumber)) {
+            throw new IllegalArgumentException("[ERROR] 보너스 번호는 당첨 번호와 중복될 수 없습니다.");
+        }
+    }
+
+    void checkBonusNumber(String input, List<Integer> winningNumbers) {
+        checkNaturalNumber(input);
+        checkRange(input);
+        checkDuplicate(input, winningNumbers);
+    }
 }

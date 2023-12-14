@@ -9,6 +9,7 @@ public class Game {
     Lottos lottos;
     int purchaseAmount;
     List<Integer> winningNumbers;
+    int bonusNumber;
 
     void play() {
         makeLottos();
@@ -23,5 +24,6 @@ public class Game {
 
     void getWinningInformation() {
         winningNumbers = inputView.readWinningNumbers();
+        bonusNumber = inputView.readBonusNumber(winningNumbers);
     }
 }
